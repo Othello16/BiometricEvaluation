@@ -1,0 +1,27 @@
+target: "PFT III"
+official_public_source: "https://github.com/usnistgov/pft"
+official_validation_anchor: "202508280945"
+official_api_header: "pftiii/include/pftiii.h"
+vendor_name: ""
+vendor_version: ""
+target_architecture: ""
+library_identifier: ""
+version_number_hex: ""
+artifacts:
+  - path: ""
+    sha256: ""
+    role: ""
+dependencies:
+  - soname: ""
+    version: ""
+    source: ""
+runtime_assumptions:
+  network_required: false
+  license_server_required: false
+  privileged_execution_required: false
+  terminal_interaction_required: false
+native_validation:
+  build_host: ""
+  compiler: ""
+  validation_result: ""
+  notes: ""

@@ -39,6 +39,18 @@ template work:
 7. Do not move to `PFT III` unless the vendor stack is proprietary-template
    oriented rather than interoperable-template oriented.
 
+PFT III path for proprietary template work
+------------------------------------------
+
+If the request is for proprietary fingerprint template evaluation:
+
+1. Start in [targets/fingerprint/pft-iii/PHASE1_START_HERE.md](./targets/fingerprint/pft-iii/PHASE1_START_HERE.md).
+2. Use [VENDOR_INTAKE_CHECKLIST.md](./targets/fingerprint/pft-iii/VENDOR_INTAKE_CHECKLIST.md).
+3. Send or complete [VENDOR_QUESTIONNAIRE.md](./targets/fingerprint/pft-iii/VENDOR_QUESTIONNAIRE.md).
+4. Follow [NATIVE_VALIDATION_WORKFLOW.md](./targets/fingerprint/pft-iii/NATIVE_VALIDATION_WORKFLOW.md).
+5. Execute [NATIVE_VALIDATION_PLAYBOOK.md](./targets/fingerprint/pft-iii/NATIVE_VALIDATION_PLAYBOOK.md).
+6. Close `PFT III` only when [PFT_DONE_CRITERIA.md](./targets/fingerprint/pft-iii/PFT_DONE_CRITERIA.md) is satisfied.
+
 Do Not Do This
 --------------
 
