@@ -1,0 +1,18 @@
+FROM ubuntu:24.04
+
+RUN useradd --create-home --uid 10002 minexuser
+
+WORKDIR /opt/minex
+
+COPY artifacts/libminexiii_nbisminexiii_5002.so /opt/minex/lib/libminexiii_nbisminexiii_5002.so
+COPY artifacts/libmindtct.so /opt/minex/lib/libmindtct.so
+COPY artifacts/libincits.so /opt/minex/lib/libincits.so
+COPY artifacts/libbozorth3.so /opt/minex/lib/libbozorth3.so
+
+RUN chown -R minexuser:minexuser /opt/minex
+
+USER minexuser
+
+ENV LD_LIBRARY_PATH=/opt/minex/lib
+
+CMD ["/bin/bash", "-lc", "ls -l /opt/minex/lib && echo 'Reference MINEX III envelope ready'"]

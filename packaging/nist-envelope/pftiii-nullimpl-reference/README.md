@@ -21,6 +21,40 @@ Use
  * copy the built libraries into the local `artifacts/` directory
  * build the image
 
+Reference commands
+------------------
+
+Build the public upstream `nullimpl` library:
+
+```bash
+git clone https://github.com/usnistgov/pft.git /tmp/pft-upstream
+cd /tmp/pft-upstream/pftiii/nullimpl
+mkdir -p build
+cd build
+cmake ..
+make -j
+```
+
+Stage the built libraries into this envelope directory:
+
+```bash
+mkdir -p artifacts
+cp /tmp/pft-upstream/pftiii/nullimpl/build/libpftiii_nullimpl_0001.so artifacts/
+cp /tmp/pft-upstream/pftiii/nullimpl/build/libpftiii/libpftiii.so artifacts/
+```
+
+Build the envelope image:
+
+```bash
+docker build -t pftiii-nullimpl-envelope:latest -f Containerfile .
+```
+
+Smoke-check the image:
+
+```bash
+docker run --rm pftiii-nullimpl-envelope:latest
+```
+
 Expected staged files
 ---------------------
 

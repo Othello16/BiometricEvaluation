@@ -39,6 +39,16 @@ template work:
 7. Do not move to `PFT III` unless the vendor stack is proprietary-template
    oriented rather than interoperable-template oriented.
 
+MINEX III public reference envelope
+-----------------------------------
+
+For a public reference build and envelope example, use:
+
+ * [MINEX nbis envelope README](./packaging/nist-envelope/minexiii-nbis-reference/README.md)
+
+This is useful for workflow proofing only. It is not a substitute for official
+MINEX III validation on the required CentOS baseline.
+
 PFT III path for proprietary template work
 ------------------------------------------
 
@@ -50,6 +60,16 @@ If the request is for proprietary fingerprint template evaluation:
 4. Follow [NATIVE_VALIDATION_WORKFLOW.md](./targets/fingerprint/pft-iii/NATIVE_VALIDATION_WORKFLOW.md).
 5. Execute [NATIVE_VALIDATION_PLAYBOOK.md](./targets/fingerprint/pft-iii/NATIVE_VALIDATION_PLAYBOOK.md).
 6. Close `PFT III` only when [PFT_DONE_CRITERIA.md](./targets/fingerprint/pft-iii/PFT_DONE_CRITERIA.md) is satisfied.
+
+PFT III public reference envelope
+---------------------------------
+
+For a public reference build and envelope example, use:
+
+ * [PFT nullimpl envelope README](./packaging/nist-envelope/pftiii-nullimpl-reference/README.md)
+
+This is useful for workflow proofing only. It is not a substitute for official
+PFT III validation with NIST-provided imagery and a real vendor library.
 
 Do Not Do This
 --------------

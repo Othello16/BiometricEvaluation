@@ -17,6 +17,13 @@ Start here:
  * [COMPATIBILITY_MATRIX.md](./COMPATIBILITY_MATRIX.md)
  * [RUNBOOK.md](./RUNBOOK.md)
 
+Repo usage note:
+
+ * this repository is the durable instruction and compatibility repo
+ * temporary upstream clones of public NIST repos may be used during local
+   verification, but they are disposable working copies and are not part of the
+   deliverable
+
 Supported Phase 1 targets:
 
  * Face:
