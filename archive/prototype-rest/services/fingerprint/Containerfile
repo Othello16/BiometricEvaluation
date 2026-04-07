@@ -1,0 +1,28 @@
+FROM registry.access.redhat.com/ubi9/ubi AS build
+
+RUN dnf install -y \
+    git \
+    java-17-openjdk-devel \
+    maven \
+ && dnf clean all
+
+WORKDIR /app
+
+COPY pom.xml /app/pom.xml
+COPY src /app/src
+
+RUN mvn -q -DskipTests package
+
+FROM registry.access.redhat.com/ubi9/ubi
+
+RUN dnf install -y \
+    java-17-openjdk-headless \
+ && dnf clean all
+
+WORKDIR /app
+
+COPY --from=build /app/target/fingerprint-service.jar /app/fingerprint-service.jar
+
+EXPOSE 8081
+
+CMD ["java", "-jar", "/app/fingerprint-service.jar"]

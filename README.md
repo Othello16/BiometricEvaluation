@@ -1,44 +1,58 @@
-NIST Image Group Biometric Repositories
-=======================================
+NIST Compatibility Kit for Jupiter
+==================================
 
-Current
--------
- * [Biometric Evaluation Framework][1]
-   * Software components for biometric technology evaluations.
- * [Face Recognition Vendor Test][2]
-   * Repository for the Face Recognition Vendor Test (FRVT).
- * [Minutia Interoperability Exchange][3]
-   * Resources for Minutia Interoperability Exchange, NIST's family of
-     interoperable fingerprint template tests.
- * [NISTscan][4]
-   * Digitization of fingerprint imagery at sample rates of 500, 1000, and 2000
-     PPI in 8-bit or 16-bit grayscale as well as 24-bit color depths.
- * [rstool][9]
-   * A tool for manipulating [Biometric Evaluation][1] RecordStores.
- * [Slap Fingerprint Segmentation][5]
-   * Resources for NIST's Slap Fingerprint Segmentation Evaluations.
+This repository is a compatibility kit for running vendor biometric submissions
+against NIST evaluation interfaces under a hardened deployment model.
 
-Legacy
-------
- * [Face Recognition Prize Challenge][6]
-   * Repository for the Face Recognition Prize Challenge.
- * [IARPA Nail to Nail Challenge][7]
-   * Fingerprint Template Generation and Matching API for IARPA's Nail to Nail
-     Fingerprint Capture Challenge.
- * [Tattoo][8]
-   * Tattoo Recognition Technology Program
+Primary goal:
 
---------------------------------------------------------------------------------
+ * make vendor implementations plug into the correct NIST evaluation interface
+ * surface incompatibilities before containerization hides them
+ * use containers only as delivery and runtime envelopes around native
+   NIST-compatible binaries
 
-*This repository previously hosted [Biometric Evaluation framework][1]. That
- code has been moved to [libbiomeval][1].*
+Start here:
 
-[1]: https://github.com/usnistgov/libbiomeval
-[2]: https://github.com/usnistgov/frvt
-[3]: https://github.com/usnistgov/minex
-[4]: https://github.com/usnistgov/nistscan
-[5]: https://github.com/usnistgov/slapseg
-[6]: https://github.com/usnistgov/frpc
-[7]: https://github.com/usnistgov/iarpa-n2n
-[8]: https://github.com/usnistgov/tattoo
-[9]: https://github.com/usnistgov/rstool
+ * [PRD.md](./PRD.md)
+ * [COMPATIBILITY_MATRIX.md](./COMPATIBILITY_MATRIX.md)
+ * [RUNBOOK.md](./RUNBOOK.md)
+
+Supported Phase 1 targets:
+
+ * Face:
+   * [FRVT 1:1](./targets/face/frvt-11/README.md)
+   * [FRVT 1:N](./targets/face/frvt-1n/README.md)
+   * [FRVT Age Estimation](./targets/face/frvt-age/README.md)
+   * [FRVT Morph](./targets/face/frvt-morph/README.md)
+   * [FRVT Quality](./targets/face/frvt-quality/README.md)
+   * [FRVT Five](./targets/face/frvt-five/README.md)
+   * [FRVT Twins](./targets/face/frvt-twins/README.md)
+ * Iris:
+   * [IREX 10 Identification](./targets/iris/irex10/README.md)
+ * Fingerprint:
+   * [MINEX III](./targets/fingerprint/minex-iii/README.md)
+   * [PFT III](./targets/fingerprint/pft-iii/README.md)
+
+Fingerprint routing note for Jupiter:
+
+ * standardized or interoperable `10-print` minutiae-template workflows start in
+   [MINEX III](./targets/fingerprint/minex-iii/README.md)
+ * proprietary `10-print` extractor or matcher library workflows start in
+   [PFT III](./targets/fingerprint/pft-iii/README.md)
+
+Hardening references:
+
+ * [Common Hardened Build Profile](./profiles/hardening/common.md)
+ * [FRVT Build Profile](./profiles/hardening/frvt-family.md)
+ * [IREX 10 Build Profile](./profiles/hardening/irex10.md)
+ * [MINEX III Build Profile](./profiles/hardening/minex-iii.md)
+ * [PFT III Build Profile](./profiles/hardening/pft-iii.md)
+
+Containerization references:
+
+ * [NIST Envelope Container Pattern](./packaging/nist-envelope/README.md)
+ * [Vendor Submission Manifest Template](./packaging/templates/vendor-submission-manifest.yaml)
+
+Archived prototype REST scaffolds were moved out of the main path:
+
+ * [archive/prototype-rest](./archive/prototype-rest)

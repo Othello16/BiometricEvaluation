@@ -1,0 +1,26 @@
+target: "MINEX III"
+official_public_source: "https://github.com/usnistgov/minex"
+official_validation_anchor: "MINEX III Validation (201907011032)"
+reference_wrapper_example: "https://github.com/usnistgov/nbisminexiii"
+vendor_name: ""
+vendor_version: ""
+target_architecture: ""
+template_standards_claimed: []
+tenprint_support: ""
+artifacts:
+  - path: ""
+    sha256: ""
+    role: ""
+dependencies:
+  - soname: ""
+    version: ""
+    source: ""
+runtime_assumptions:
+  network_required: false
+  license_server_required: false
+  privileged_execution_required: false
+native_validation:
+  build_host: ""
+  compiler: ""
+  validation_result: ""
+  notes: ""

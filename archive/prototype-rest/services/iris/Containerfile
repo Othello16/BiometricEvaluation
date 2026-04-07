@@ -1,0 +1,22 @@
+FROM registry.access.redhat.com/ubi9/ubi
+
+RUN dnf install -y \
+    gcc \
+    gcc-c++ \
+    make \
+    cmake \
+    python3 \
+    python3-devel \
+    python3-pip \
+ && dnf clean all
+
+WORKDIR /app
+
+COPY requirements.txt /app/requirements.txt
+RUN pip3 install --no-cache-dir -r /app/requirements.txt
+
+COPY app.py /app/app.py
+
+EXPOSE 8083
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8083"]

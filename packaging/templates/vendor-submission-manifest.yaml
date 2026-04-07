@@ -1,0 +1,23 @@
+target: ""
+target_family: ""
+vendor_name: ""
+submission_version: ""
+official_package_source: ""
+official_package_version: ""
+vendor_artifacts:
+  - path: ""
+    sha256: ""
+    role: ""
+runtime_dependencies:
+  - soname: ""
+    source: ""
+container_envelope:
+  base_image: ""
+  image_digest: ""
+  run_as_uid: ""
+  read_only_rootfs: true
+validation:
+  native_validation_status: ""
+  native_validation_notes: ""
+  envelope_validation_status: ""
+  envelope_validation_notes: ""
