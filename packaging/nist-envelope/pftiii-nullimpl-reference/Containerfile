@@ -1,0 +1,16 @@
+FROM ubuntu:24.04
+
+RUN useradd --create-home --uid 10001 pftuser
+
+WORKDIR /opt/pft
+
+COPY artifacts/libpftiii_nullimpl_0001.so /opt/pft/lib/libpftiii_nullimpl_0001.so
+COPY artifacts/libpftiii.so /opt/pft/lib/libpftiii.so
+
+RUN chown -R pftuser:pftuser /opt/pft
+
+USER pftuser
+
+ENV LD_LIBRARY_PATH=/opt/pft/lib
+
+CMD ["/bin/bash", "-lc", "ls -l /opt/pft/lib && echo 'Reference PFT III envelope ready'"]

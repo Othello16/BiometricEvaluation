@@ -56,9 +56,23 @@ Do Not Do This
 
  * Do not replace the native interface with a web API.
  * Do not let runtime containers fetch internet dependencies.
+ * Do not install host packages unless the impact is understood and approved.
  * Do not assume one modality-level process supports every NIST target in that
    modality.
  * Do not assume vendor install docs satisfy hardened environment controls.
+
+System-impact warning
+---------------------
+
+Before changing the host system, prefer this order:
+
+1. disposable working directory
+2. temporary container matching the official validation baseline
+3. host package changes only if isolation is not feasible
+
+Python virtual environments are useful for Python-only tooling, but they do not
+solve the OS-package and exact-runtime requirements of NIST native validation
+packages.
 
 Validation Order
 ----------------
